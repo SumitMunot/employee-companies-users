@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %> | <strong>Id:</strong> <%= @user.id %> | <strong>Employer:</strong>
+  <% @user.companies.each do |company| %>
+  <%= company.name %> <% end %> | <strong>Role:</strong>
+  <% @user.employments.each do |employment| %>
+  	<% if employment.manager? %>Manager<% end %>
+  	<% if employment.staff? %>Staff<% end %>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

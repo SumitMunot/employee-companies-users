@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  manager: false
+  staff: false
+  user_id: 
+  company_id: 
+
+two:
+  manager: false
+  staff: false
+  user_id: 
+  company_id: 

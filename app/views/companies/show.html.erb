@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @company.name %>
+</p>
+<%= link_to 'Edit', edit_company_path(@company) %> |
+<%= link_to 'Back', companies_path %>
+
+<p>
+  <strong>Employees:</strong>
+</p>
+
+<ul>
+<% @company.users.each do |user| %>
+  <li>
+  <strong>Name:</strong> <%= user.name %> | <strong>Id:</strong> <%= user.id %> | <strong>Role:</strong><% user.employments.each do |employment| %>
+  <% if employment.manager? %>Manager<% end %>
+  <% if employment.staff? %>Staff<% end %>
+  <% end %>
+  </li>
+<% end %>
+</ul>
+
+
+<p>
+  <strong>Employment:</strong>
+</p>
+<% @company.employments.each do |employment| %>
+  <%= employment.manager %>
+  <%= employment.staff %>
+<% end %>
+
