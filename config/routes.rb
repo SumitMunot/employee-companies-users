@@ -7,7 +7,6 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'application#index'
-
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -32,7 +31,7 @@ Rails.application.routes.draw do
   # Example resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales
-  #     resource :seller
+  #     resource :sOnline for 24th Jul 2017eller
   #   end
 
   # Example resource route with more complex sub-resources:

@@ -1,0 +1,19 @@
+  <tbody>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= user.name %></td>
+        <td><% user.companies.each do |company| %><%= company.name %><% end %></td>
+        <td>
+          <% user.employments.each do |employment| %>
+          <% if employment.manager? %>Manager<% end %>
+          <% if employment.staff? %>Staff<% end %>
+          <% end %>
+        </td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  </tbody>
+</table>
+
+<br>
