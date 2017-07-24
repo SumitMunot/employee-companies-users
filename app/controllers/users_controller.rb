@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :user_info, only: [:show]
+  before_action :correct_user, only: [:destroy]
 
   # GET /users
   # GET /users.json
@@ -91,13 +93,14 @@ class UsersController < ApplicationController
 
     # For checking user's informations
     def user_info
-      redirect_to users_url, notice: "Please check user info." unless correct_user?
+      @user = User.find(params[:id])
+      render action: "show", notice: "Please check user info."
     end
 
     # Checks the correct user from database
     def correct_user
       @user = User.find(params[:id])
-      redirect_to(root_path)
+      redirect_to(root_path, notice: "You are not permitted to destoy the user")
     end 
 
 end
