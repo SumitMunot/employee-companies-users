@@ -3,11 +3,11 @@
 one:
   manager: false
   staff: false
-  user_id: 
-  company_id: 
+  user_id: 1
+  company_id: 1
 
 two:
   manager: false
   staff: false
-  user_id: 
-  company_id: 
+  user_id: 2
+  company_id: 1
