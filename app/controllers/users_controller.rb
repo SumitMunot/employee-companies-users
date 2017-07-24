@@ -88,4 +88,16 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name)
     end
+
+    # For checking user's informations
+    def user_info
+      redirect_to users_url, notice: "Please check user info." unless correct_user?
+    end
+
+    # Checks the correct user from database
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_path)
+    end 
+
 end
