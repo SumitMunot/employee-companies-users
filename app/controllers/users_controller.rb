@@ -100,7 +100,7 @@ class UsersController < ApplicationController
     # Checks the correct user from database
     def correct_user
       @user = User.find(params[:id])
-      redirect_to(root_path, notice: "You are not permitted to destoy the user")
+      redirect_to root_path, notice: "You are not permitted to destoy the user"
     end 
 
 end
